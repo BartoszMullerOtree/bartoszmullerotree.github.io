@@ -1,0 +1,187 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $Color-Brand-black;
+
+  font: 300 1.3125rem $font-primary;
+  color: $Color-Brand-white;
+  overflow-y: scroll;
+  font-family: $font-primary;
+  padding-bottom: 4rem;
+}
+
+/* -------------------- */
+
+/* HEADINGS */
+
+h1,
+h2,
+.h1l64 {
+  font: 300 4rem / 115% $font-primary;
+  background: linear-gradient(118deg, #fff 17.33%, #ac9ade 57.27%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+h3,
+.h3l34 {
+  color: $Color-Brand-white;
+  font: 300 2.125rem / 120% $font-primary;
+}
+h4,
+.h4-over-title {
+  font: 500 1.4375rem / 120% $font-primary;
+  letter-spacing: 0.04em;
+}
+.over-title {
+  margin-bottom: 0.75rem;
+  
+  background: linear-gradient(91deg, #ac9ade 17.98%, #613fe7 95.88%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  &::before {
+    content: "";
+
+    display: inline-block;
+    vertical-align: middle;
+
+    width: 29px;
+    height: 2px;
+    margin-right: 0.625rem;
+
+    background: $Color-Brand-Soft_brand;
+  }
+}
+
+@include tablet {
+  h1,
+  h2,
+  .h1l64 {
+    font: 400 3rem / 115% $font-primary;
+  }
+
+  h3,
+  .h3l34 {
+    font: 300 1.625rem / 120% $font-primary;
+  }
+}
+
+/* -------------------- */
+
+/* FUNCTIONAL CLASSES */
+
+.scroll-lock {
+  overflow-y: hidden;
+  max-height: 100vh;
+}
+
+/* -------------------- */
+
+/* CONTAINERS */
+
+.page-ctnr {
+  display: block;
+  width: 100%;
+  padding: 0 7.6%;
+  max-width: 1700px;
+  margin: auto;
+}
+.page-content {
+  display: block;
+}
+section,
+.section {
+  padding: 4rem 0;
+}
+
+.content-ctnr {
+  padding-left: 7%;
+}
+
+@include tablet {
+  .page-ctnr {
+    padding: 0;
+  }
+  .page-content {
+    padding: 0 1rem;
+  }
+  section,
+  .section {
+    padding: 2rem 0;
+  }
+  .content-ctnr {
+    padding-left: 0;
+  }
+}
+
+/* -------------------- */
+
+/* ANIMATIONS */
+
+// btn gradient move
+@keyframes gradient-move {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+// wave animation
+.fadeInElements > *, .fadeInElement {
+  opacity: 0;
+  transform: translateY(2rem);
+}
+
+.upDownIn {
+  animation: UpDown 0.8s ease-in-out forwards;
+}
+
+@keyframes UpDown {
+  50% {
+    opacity: 1;
+    transform: translateY(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+// scroll animate
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scrollAnimatedSections {
+  > * {
+    animation-delay: 0.35s;
+    animation: fadeInUp 1s ease-in-out;
+  }
+  .animatedSection {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-in-out, transform 0.7s ease-in-out;
+    &.animateFromTop {
+      transform: translateY(-30px);
+    }
+    &.isCurrentWindow {
+      transform: none;
+      opacity: 1;
+    }
+  }
+}
+
+/* -------------------- */

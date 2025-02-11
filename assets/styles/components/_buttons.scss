@@ -1,0 +1,153 @@
+.btn {
+  cursor: pointer;
+  position: relative;
+
+  display: block;
+  max-width: max-content;
+
+  border-radius: 5rem;
+  letter-spacing: 0.04em;
+  overflow: hidden;
+
+  transition: background 0.3s ease-in-out;
+  &::after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+
+    width: 0.875rem;
+    height: 1rem;
+    margin-left: 1rem;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+  }
+
+  &:hover,
+  &:active {
+    background: unset;
+
+    &::before {
+      transition: opacity 0s;
+      opacity: 1;
+    }
+  }
+}
+.btn-primary {
+  padding: 1.5rem 3rem;
+
+  background: $Color-Brand-white;
+  border: 2px solid $Color-Gradient-Fiolet-1;
+  @include shadow-boxes(8px 8px 12px 0px rgba(47, 43, 65, 0.3));
+
+  text-wrap: nowrap;
+  color: $Color-Brand-Strong_brand;
+  font: 500 1.4375rem / 120% $font-primary;
+
+  &::after {
+    background-image: url("./assets/media/icons/arrow-right.svg");
+  }
+
+  &::before {
+    background: linear-gradient(
+        96deg,
+        rgba(172, 154, 222, 0.48) 18.34%,
+        rgba(255, 255, 255, 0.4) 26.96%,
+        rgba(172, 154, 222, 0.48) 35.4%,
+        rgba(172, 154, 222, 0.48) 68.34%,
+        rgba(255, 255, 255, 0.4) 76.96%,
+        rgba(172, 154, 222, 0.48) 85.4%
+      ),
+      $Color-Brand-white;
+    background-size: 200%;
+  }
+
+  &:hover {
+    background: unset;
+    border: 2px solid #462ab6;
+    
+    &::before {
+      animation: gradient-move linear 4.25s infinite;
+    }
+  }
+  &:active {
+    border: $Color-Brand-Strong_brand;
+    background: linear-gradient(
+        0deg,
+        rgba(172, 154, 222, 0.3) 0%,
+        rgba(172, 154, 222, 0.3) 100%
+      ),
+      $Color-Brand-white;
+  }
+}
+@include tablet {
+  .btn {
+    &::after {
+      margin-left: 0.75rem;
+    }
+  }
+  .btn-primary {
+    padding: 1.5rem 2rem;
+    font-size: 1.25rem;
+  }
+}
+
+.btn-secondary {
+  padding: 1rem 2rem;
+
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  background: $Color-Brand-Strong_brand;
+
+  color: $Color-Brand-white;
+  font-family: $font-secondary;
+  font: 600 1rem / 120% $font-secondary;
+  letter-spacing: 0.04em;
+
+  &::after {
+    background-image: url("./assets/media/icons/arrow-up-right.svg");
+  }
+  &::before {
+    background: linear-gradient(
+        96deg,
+        rgba(172, 154, 222, 0.48) 18.34%,
+        rgba(255, 255, 255, 0.56) 26.96%,
+        rgba(172, 154, 222, 0.48) 35.4%,
+        rgba(172, 154, 222, 0.48) 68.34%,
+        rgba(255, 255, 255, 0.56) 76.96%,
+        rgba(172, 154, 222, 0.48) 85.4%
+      ),
+      $Color-Brand-Strong_brand;
+      background-size: 200%;
+  }
+
+  &:hover {
+    background: unset;
+
+    &::before {
+      animation: gradient-move linear 4.25s infinite;
+    }
+  }
+  &:active {
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.3) 100%
+      ),
+      $Color-Brand-Strong_brand;
+  }
+}

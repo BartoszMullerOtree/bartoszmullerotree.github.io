@@ -1,0 +1,50 @@
+//breakpoints
+$tablet-bp: 991px;
+$phone-bp: 768px;
+// $phone-lg-bp: 768px;
+// $phone-sm-bp: 535px;
+
+// Z INDEXES
+
+$index-header: 5;
+$index-under-header: #{$index-header - 1};
+$index-above-header: #{$index-header + 1};
+$index-menu: #{$index-header + 1};
+$index-above-menu: #{$index-header + 2};
+
+//fonts
+$font-primary: "Clash Grotesk", sans-serif;
+$font-secondary: "Inter", sans-serif;
+
+// Color Neutral
+$Color-Neutral-black: #000000;
+$Color-Neutral-neutral-lighter: #cccccc;
+$Color-Neutral-white: #ffffff;
+$Color-Neutral-neutral-lightest: #eeeeee;
+$Color-Neutral-neutral-light: #aaaaaa;
+$Color-Neutral-neutral: #666666;
+$Color-Neutral-neutral-dark: #444444;
+$Color-Neutral-neutral-darker: #222222;
+$Color-Neutral-neutral-darkest: #111111;
+
+// Color Brand
+$Color-Brand-white: #fefefe;
+$Color-Brand-black: #131313;
+$Color-Brand-Soft_brand: #ac9ade;
+$Color-Brand-Strong_brand: #613fe7;
+$Color-Brand-Elements: #ebebeb;
+
+// Color System
+$Color-System-success-green: #027a48;
+$Color-System-success-green-light: #ecfdf3;
+$Color-System-error-red: #b42318;
+$Color-System-error-red-light: #fef3f2;
+
+// Other Colors
+
+$Base-White: #ffffff;
+
+$Gray-200: #EAECF0;
+$Gray-900: #101828;
+
+$Color-Gradient-Fiolet-1: #462ab6;

@@ -1,0 +1,48 @@
+.intro {
+  position: relative;
+
+  padding-top: 6.5rem;
+  padding-bottom: 3.75rem;
+
+  &__img {
+    position: absolute;
+    right: 70px;
+    top: 0;
+    z-index: -1;
+    display: block;
+    width: 450px;
+    height: auto
+  }
+
+  &__header {
+    max-width: 49.25rem;
+    margin-bottom: 2.5rem;
+  }
+  .btn-primary {
+  }
+  &__plate {
+    max-width: 56.25rem;
+    padding: 2rem 3rem;
+    margin-top: 7.25rem;
+
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(1.125rem);
+  }
+}
+
+@include tablet {
+  .intro {
+    padding-top: 1.75rem;
+
+    &__img {
+      position: static;
+      width: 250px;
+      margin: auto;
+    }
+    &__plate{
+      padding: 1rem;
+      margin-top: 2.5rem;
+    }
+  }
+}

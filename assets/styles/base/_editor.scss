@@ -1,0 +1,9 @@
+.editor-styles-wrapper .block-editor-block-list__layout.is-root-container > :where(:not(.alignleft):not(.alignright):not(.alignfull)){
+  max-width: 1300px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 24px;
+}
+.block-editor-iframe__scale-container > iframe{
+  width: 1300px !important;
+}
