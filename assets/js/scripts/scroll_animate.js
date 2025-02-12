@@ -21,7 +21,7 @@ export default function scrollAnimate() {
         currentElement.classList.remove("isCurrentWindow");
       }
     };
-    currentElement.classList.add("animatedSection");
+    
     window.addEventListener("scroll", onScrollSection);
    
   });
