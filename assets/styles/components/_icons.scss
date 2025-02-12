@@ -1,0 +1,20 @@
+.icon {
+  &::before {
+    content: "";
+
+    display: block;
+    
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+.icon-chevron {
+  &::before {
+    width: 0.875rem;
+    height: 1rem;
+    
+    background-image: url("/assets/media/icons/chevron-left.svg");
+  }
+}

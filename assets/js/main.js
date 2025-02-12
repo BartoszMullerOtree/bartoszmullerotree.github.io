@@ -1,5 +1,6 @@
 import scrollAnimate from "./scripts/scroll_animate.js";
 import fadeInAnimation from "./scripts/fade_in_animation.js";
+import accordion from "./scripts/accordion.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("load", () => {
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     scrollAnimate();
     fadeInAnimation();
+    accordion();
 
 
     window.dispatchEvent(new Event("scroll"));

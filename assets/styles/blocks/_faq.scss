@@ -1,0 +1,114 @@
+.faq {
+  display: flex;
+  &__content {
+    flex: 1;
+    max-width: 924px;
+  }
+  &__header {
+    margin-bottom: 4rem;
+  }
+  &__title {
+  }
+  &__subtitle {
+  }
+}
+.accordion {
+  
+  padding: 0 4.4%;
+
+  &__item {
+    position: relative;
+    padding: 0 0 2rem 4.5%;
+    margin-bottom: 1.5rem;
+
+    border-bottom: 1px solid $Color-Brand-Soft_brand;
+    &:last-child {
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+  &__header,
+  &__content {
+    padding-right: 7%;
+  }
+  &__header {
+    cursor: pointer;
+
+    display: block;
+    min-height: 2.5rem;
+
+    color: $Color-Brand-white;
+    font: 500 1.25rem / 140% $font-primary;
+
+    transition: margin 0.3s ease-in-out;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0.25rem;
+      right: 0.5rem;
+
+      display: block;
+      width: 0.875rem;
+      height: 1rem;
+
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url("/assets/media/icons/chevron-left.svg");
+
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  &__content {
+    color: $Color-Brand-Soft_brand;
+    font: 400 1.125rem / 133% $font-primary;
+
+    overflow: hidden;
+    transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+}
+.accordion__item {
+  &:not(.accordion__item--open) {
+    .accordion__content {
+      opacity: 0;
+      height: 0 !important;
+    }
+  }
+  &--open {
+    .accordion {
+      &__header {
+        margin-bottom: 0.5rem;
+
+        &::after {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+  }
+}
+
+@include tablet{
+  .faq{
+    padding: 4rem 0;
+  }
+  .accordion{
+    padding: 0;
+
+    &__item{
+      padding: 0 0 2rem;
+    }
+    &__header, &__content{
+      padding-right: 2.375rem;
+    }
+    &__header{
+      &::after{
+        right: 0;
+      }
+    }
+    &__content{
+      font-size: 1rem;
+    }
+  }
+}
