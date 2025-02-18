@@ -1,0 +1,300 @@
+.contact {
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 8.9%;
+  }
+  &__header {
+    margin-bottom: 4rem;
+  }
+}
+
+.contact-person {
+  max-width: 22.375rem;
+
+  color: $Color-Brand-white;
+  &__img {
+    margin-bottom: 1rem;
+  }
+  &__name {
+    margin-bottom: 1.4375rem;
+
+    font: 400 1.5rem / 133% $font-primary;
+    letter-spacing: 0.02em;
+  }
+  &__link {
+    color: $Color-Brand-white;
+    font: 500 1.25rem / 140% $font-primary;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+.contact-form {
+  flex: 1;
+
+  > * {
+    margin-bottom: 1.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__row {
+    display: flex;
+    .contact-form-field {
+      flex: 1;
+    }
+  }
+  &__separator {
+    margin: 0 16px;
+
+    color: $Color-Brand-Soft_brand;
+    font: 500 1.25rem / 140% $font-primary;
+    align-self: flex-end;
+  }
+  &__btn {
+    margin: 1rem 0 1rem auto;
+  }
+}
+.contact-form-field {
+  position: relative;
+  padding-top: 1.625rem;
+  label {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    margin-bottom: 0.375rem;
+    color: $Color-Brand-Soft_brand;
+    font: 500 0.9375rem / 133% $font-primary;
+  }
+  &__input,
+  input,
+  textarea,
+  select {
+    all: unset;
+    box-sizing: border-box;
+    display: block;
+
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+
+    border-radius: 0.5rem;
+    border: 1px solid $Color-Neutral-neutral-lightest;
+    background: $Color-Brand-white;
+    @include shadow-boxes(0px 1px 2px 0px rgba(16, 24, 40, 0.05));
+
+    color: $Color-Neutral-black;
+    font: 400 1rem / 150% $font-primary;
+
+    transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+    &::placeholder {
+      color: $Color-Neutral-neutral;
+      font: 400 1rem / 150% $font-primary;
+    }
+    &:not(:focus) {
+      opacity: 0.7;
+    }
+    textarea {
+      height: 42.9375rem;
+      padding: 0.75rem 0.875rem;
+    }
+    &[type="checkbox"] {
+      display: block;
+      width: 1.25rem;
+      height: 1.25rem;
+      padding: 0;
+      border-radius: 0.375rem;
+      &:checked {
+        background: url("/assets/media/icons/check.svg") no-repeat center;
+        background-color: $Color-Brand-Soft_brand;
+        background-size: 60%;
+        border-color: $Color-Brand-Strong_brand;
+      }
+    }
+
+    &:required,
+    &--required {
+      ~ label {
+        &::after {
+          content: "*";
+        }
+      }
+    }
+  }
+  &__msg {
+    display: none;
+
+    margin-top: 0.375rem;
+    color: $Color-System-error-red;
+    font: 400 14px / 142.85% $font-secondary;
+  }
+  &__wrapper {
+    display: flex;
+    width: 100%;
+  }
+  &--select {
+    select {
+      order: -1;
+      flex: 0 0 auto;
+
+      width: auto;
+
+      border-radius: 0.5rem 0 0 0.5rem;
+      border-right: 0;
+    }
+    input {
+      border-left: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      &:focus {
+        ~ select {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &--file {
+    input {
+      display: none;
+    }
+  }
+  &--checkbox {
+    padding-top: 0;
+    margin-bottom: 0.5rem;
+
+    label {
+      position: static;
+      margin: 0;
+      font: 400 1rem / 150% $font-primary;
+    }
+    .contact-form-field__wrapper {
+      align-items: center;
+      gap: 0.75rem;
+    }
+  }
+  &.isError {
+    .contact-form-field__msg {
+      display: block;
+    }
+  }
+}
+
+.contact-form-info {
+  color: $Color-Brand-Soft_brand;
+  font: 400 1rem / 150% $font-primary;
+}
+.input-file-area {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1.125rem 0.875rem;
+  min-height: 3.75rem;
+  &--uploaded {
+    .empty-area {
+      display: none;
+    }
+    .uploaded-area {
+      display: flex;
+    }
+  }
+}
+.empty-area {
+  text-align: center;
+  .icon {
+    vertical-align: middle;
+    margin-right: 0.5rem;
+  }
+  button {
+    cursor: pointer;
+    font-weight: 500;
+    color: $Color-Brand-Strong_brand;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.uploaded-area {
+  display: none;
+  align-items: center;
+  .icon-file {
+    margin-right: 0.5rem;
+  }
+  &__file {
+    color: $Color-Neutral-black;
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 114.286% */
+    letter-spacing: 0.25px;
+    font: 400 0.875rem / 114% $font-secondary;
+  }
+  &__remove {
+    cursor: pointer;
+    
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    padding: 0.25rem 1rem;
+    margin-left: 1rem;
+    border-radius: 0.375rem;
+    border: 1px solid $Color-System-error-red;
+
+    color: $Color-System-error-red;
+    letter-spacing: 0.0015em;
+    font: 500 0.75rem / 116.6% $font-secondary;
+  }
+}
+@include desktop {
+  .contact-form {
+    max-width: 44.6875rem;
+    &__row {
+      .contact-form-field {
+        + .contact-form-field {
+          margin-left: 2rem;
+        }
+      }
+    }
+  }
+}
+@include tablet {
+  .contact {
+    &__content {
+      display: block;
+    }
+  }
+  .contact-person {
+    margin-bottom: 3rem;
+  }
+  .contact-form {
+    > * {
+      margin-bottom: 2rem;
+    }
+    &__row {
+      display: block;
+      .contact-form-field {
+        + .contact-form-field {
+          margin-top: 2rem;
+        }
+      }
+    }
+    &__separator {
+      margin: 0.25rem auto;
+      text-align: center;
+    }
+  }
+  .contact-form-field--checkbox{
+    label{
+      padding: 0.5625rem 0;
+      flex-grow: 1;
+    }
+  }
+}

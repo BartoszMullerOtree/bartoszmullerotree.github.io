@@ -113,12 +113,13 @@
 
   color: $Color-Brand-white;
   font-family: $font-secondary;
-  font: 600 1rem / 120% $font-secondary;
+  font: 600 1.125rem / 120% $font-secondary;
   letter-spacing: 0.04em;
 
   &::after {
-    background-image: url("./assets/media/icons/arrow-up-right.svg");
+    background-image: url("./assets/media/icons/arrow-right.svg");
   }
+
   &::before {
     background: linear-gradient(
         96deg,
@@ -139,5 +140,16 @@
         rgba(0, 0, 0, 0.3) 100%
       ),
       $Color-Brand-Strong_brand;
+  }
+
+  &--small {
+    font-size: 1rem;
+  }
+  &--arrowup {
+    &::after {
+      width: 0.7422rem;
+      height: 1.1875rem;
+      background-image: url("./assets/media/icons/arrow-up-right.svg");
+    }
   }
 }

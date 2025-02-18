@@ -1,9 +1,11 @@
 .icon {
+  display: inline-block;
+  height: max-content;
+
   &::before {
     content: "";
 
     display: block;
-    
 
     background-position: center;
     background-repeat: no-repeat;
@@ -14,7 +16,38 @@
   &::before {
     width: 0.875rem;
     height: 1rem;
-    
+
     background-image: url("/assets/media/icons/chevron-left.svg");
+  }
+}
+.icon-upload {
+  &::before {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1.5rem;
+    aspect-ratio: 1;
+    background-image: url("/assets/media/icons/upload.svg");
+  }
+}
+.icon-file {
+  &::before {
+    width: 1.5rem;
+    aspect-ratio: 1;
+    background-image: url("/assets/media/icons/file.svg");
+  }
+}
+.icon-trash {
+  &::before {
+    width: 0.8438rem;
+    height: 0.9375rem;
+    background-image: url("/assets/media/icons/trash.svg");
+  }
+}
+.icon-xmark{
+  &::before{
+    width: 1.4375rem;
+    height: auto;
+    aspect-ratio: 23 / 36.8;
+    background-image: url("./assets/media/icons/xmark.svg");
   }
 }

@@ -1,6 +1,8 @@
 import scrollAnimate from "./scripts/scroll_animate.js";
 import fadeInAnimation from "./scripts/fade_in_animation.js";
 import accordion from "./scripts/accordion.js";
+import contactFormScripts from "./scripts/contact_form_scripts.js";
+import fab from "./scripts/fab.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("load", () => {
@@ -17,7 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollAnimate();
     fadeInAnimation();
     accordion();
-
+    contactFormScripts();
+    fab();
 
     window.dispatchEvent(new Event("scroll"));
   });

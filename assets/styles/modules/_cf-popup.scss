@@ -1,0 +1,93 @@
+.cf-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $index-above-menu;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+
+  transition: all 0.3s ease-in;
+  
+  &--open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__container {
+    padding: 1.5rem 1.5rem 4rem;
+    max-width: 52.375rem;
+    width: 94%;
+    border-radius: 0.5rem;
+    background-color: $Color-Brand-white;
+  }
+  &__blur {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: rgba(48, 48, 48, 0.4);
+  }
+  &__btn {
+    cursor: pointer;
+
+    display: block;
+    margin-left: auto;
+    margin-bottom: 1rem;
+  }
+  &__title {
+    margin-bottom: 0.75rem;
+
+    color: $Color-Brand-Strong_brand;
+
+    font: 400 1.5rem / 133.3% $font-primary;
+    letter-spacing: 0.02em;
+  }
+  &__text {
+    color: $Color-Neutral-neutral-darker;
+    margin-bottom: 4rem;
+    font: 500 1.875rem / 120% $font-primary;
+    letter-spacing: 0.04em;
+  }
+}
+.cf-popup-person {
+  display: flex;
+  gap: 1.125rem;
+  &__img {
+    display: block;
+
+    width: 6.9375rem;
+    height: auto;
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+  }
+  &__content {
+    color: $Color-Brand-Strong_brand;
+  }
+  &__name {
+    display: block;
+    margin-bottom: 1.4375rem;
+
+    font: 500 1.4375rem / 120% $font-primary;
+    letter-spacing: 0.04em;
+  }
+  &__link {
+    display: block;
+
+    font: 500 1.25rem / 140% $font-primary;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -8,7 +8,7 @@
   justify-content: space-between;
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  background-color: $Color-Brand-black;
+  
   z-index: $index-header;
 
   &__banner {
@@ -125,7 +125,7 @@
     top: 0;
 
     padding: 0.875rem 0.75rem 0.875rem 1rem;
-
+    // background-color: $Color-Brand-black;
     &__menuBtn{
       display: block;
     }

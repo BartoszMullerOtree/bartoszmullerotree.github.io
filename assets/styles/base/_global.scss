@@ -1,17 +1,34 @@
 html {
   scroll-behavior: smooth;
+
+  @media (max-width: $desktop-scale-bp) and (min-width: #{$tablet-bp + 0.5px}) {
+    font-size: calc(0.3rem + 0.75vw);
+  }
+  // @media (max-width: $tablet-bp) and (min-width: #{$tablet-scale-bp}) {
+  //   font-size: calc(0.3rem + 1vw);
+  // }
 }
 
 body {
   background-color: $Color-Brand-black;
-
+  
   font: 300 1.3125rem $font-primary;
   color: $Color-Brand-white;
   overflow-y: scroll;
   font-family: $font-primary;
-  padding-bottom: 20vh;
+  
 }
 
+@media (min-width: 1440px) {
+  body {
+    margin-inline: 7.6%;
+  }
+}
+@media (max-width: 1439.5px) and (min-width: #{$tablet-bp + 0.5px}) {
+  body {
+    margin-inline: 3.8%;
+  }
+}
 /* -------------------- */
 
 /* HEADINGS */
@@ -79,6 +96,17 @@ h4,
   max-height: 100vh;
 }
 
+@include tablet {
+  .only-desktop {
+    display: none;
+  }
+}
+@include desktop {
+  .only-mobile {
+    display: none;
+  }
+}
+
 /* -------------------- */
 
 /* CONTAINERS */
@@ -86,9 +114,14 @@ h4,
 .page-ctnr {
   display: block;
   width: 100%;
-  padding: 0 7.6%;
-  max-width: 1700px;
   margin: auto;
+  max-width: 1440px;
+  margin: auto;
+
+  background: url("/assets/media/images/lines_bg.svg");
+  background-size: 100%;
+
+  padding-bottom: 20vh;
 }
 .page-content {
   display: block;
@@ -99,12 +132,14 @@ section,
 }
 
 .content-ctnr {
-  padding-left: 7%;
+  padding-left: 8.3%;
 }
-
 @include tablet {
   .page-ctnr {
-    padding: 0;
+    background-image: url("/assets/media/images/lines_bg_mobile.svg");
+    background-size: calc(100% - 2rem);
+    background-repeat: no-repeat;
+    background-position: center;
   }
   .page-content {
     padding: 0 1rem;
@@ -115,6 +150,11 @@ section,
   }
   .content-ctnr {
     padding-left: 0;
+  }
+}
+
+@include tablet {
+  .page-ctnr {
   }
 }
 
@@ -187,9 +227,8 @@ section,
       opacity: 1;
     }
   }
-
 }
-.header{
+.header {
   animation: fadeIn 1.5s ease-in-out;
 }
 

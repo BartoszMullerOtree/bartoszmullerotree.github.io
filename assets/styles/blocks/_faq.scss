@@ -1,24 +1,37 @@
 .faq {
+  position: relative;
+
   display: flex;
+
   &__content {
     flex: 1;
     max-width: 924px;
   }
   &__header {
+    // padding-left: 13%;
     margin-bottom: 4rem;
   }
   &__title {
   }
   &__subtitle {
   }
-}
-.accordion {
-  
-  padding: 0 4.4%;
+  &__img{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
 
+    width: 41%;
+    height: auto;
+    margin: auto;
+  }
+}
+
+.accordion {
+  max-width: 48rem;
   &__item {
     position: relative;
-    padding: 0 0 2rem 4.5%;
+
     margin-bottom: 1.5rem;
 
     border-bottom: 1px solid $Color-Brand-Soft_brand;
@@ -89,25 +102,48 @@
   }
 }
 
-@include tablet{
-  .faq{
-    padding: 4rem 0;
+@include desktop {
+  $accordion__item-left-padding: 2.5625rem;
+
+  .accordion {
+    &__item {
+      position: relative;
+
+      margin-left: calc(-1 * #{$accordion__item-left-padding});
+      padding: 0 0 2rem $accordion__item-left-padding;
+      width: calc(100% + #{$accordion__item-left-padding});
+    }
   }
-  .accordion{
+}
+
+@include tablet {
+  .faq {
+    padding: 4rem 0;
+    &__title{
+      margin-bottom: 1rem;
+    }
+    &__img{
+      position: static;
+      width: auto;
+      margin-bottom: 1rem;
+    }
+  }
+  .accordion {
     padding: 0;
 
-    &__item{
+    &__item {
       padding: 0 0 2rem;
     }
-    &__header, &__content{
+    &__header,
+    &__content {
       padding-right: 2.375rem;
     }
-    &__header{
-      &::after{
+    &__header {
+      &::after {
         right: 0;
       }
     }
-    &__content{
+    &__content {
       font-size: 1rem;
     }
   }

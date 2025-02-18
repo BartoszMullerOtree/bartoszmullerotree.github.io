@@ -4,6 +4,8 @@
 
   &__title {
     margin-bottom: 4.25rem;
+    white-space: nowrap;
+
   }
   &__subtitle {
   }
@@ -44,7 +46,7 @@
   &__desc {
     color: $Color-Brand-black;
     letter-spacing: 0.02em;
-    font: 300 1.3125rem / 143%;
+    font: 300 1.3125rem / 143% $font-primary;
 
     strong {
       font-weight: 500;
@@ -58,8 +60,7 @@
     row-gap: 3rem;
     &__header {
       padding-right: 6%;
-      width: 46%;
-      flex: 1 2 auto;
+      flex: 0 2 0;
       max-width: 546px;
     }
     &__list{

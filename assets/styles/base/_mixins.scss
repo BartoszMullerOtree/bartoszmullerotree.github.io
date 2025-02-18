@@ -41,3 +41,8 @@
   -webkit-filter: $filter-property;
   -moz-filter: $filter-property;
 }
+
+@mixin backdrop-filters($backdrop-filter-property){
+  -webkit-backdrop-filter: $backdrop-filter-property;
+  backdrop-filter: $backdrop-filter-property;
+}

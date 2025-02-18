@@ -1,0 +1,112 @@
+.fab-contact {
+  position: fixed;
+  right: 6rem;
+  bottom: 4rem;
+  z-index: $index-under-header;
+
+  &:not(:hover) {
+    .fab-contact__content {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+  }
+  &:not(.fab-contact--open) {
+    &:not(:hover) {
+      .fab-contact__img {
+        @include filters(contrast(0.7));
+      }
+    }
+  }
+
+  &__btn {
+    cursor: pointer;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+
+    display: block;
+    width: 2.5rem;
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+    background-color: rgba(226, 226, 226, 0.6);
+    @include backdrop-filters(blur(4.5px));
+
+    transform: translate(0, -45%);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.4375rem;
+
+    width: 5.375rem;
+    padding: 0.5rem;
+
+    border-radius: 6.25rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    background-blend-mode: lighten, normal;
+    @include backdrop-filters(blur(4.5px));
+    overflow: hidden;
+
+    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  &__text {
+    padding-left: 1.5rem;
+
+    text-align: center;
+    white-space: nowrap;
+    color: $Color-Brand-black;
+    font: 500 1.25rem / 140% $font-primary;
+
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+    a {
+      display: block;
+    }
+  }
+  &__img {
+    display: block;
+    width: 4.375rem;
+    aspect-ratio: 1;
+    flex-shrink: 0;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+  }
+  &--open {
+    .icon-lines__first {
+      transform: none;
+    }
+    .fab-contact {
+      &__btn {
+        transform: translate(45%, -45%);
+      }
+      &__content {
+        width: 17.8125rem;
+      }
+      &__text {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.icon-lines {
+  margin: auto;
+
+  &__first {
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+@include tablet{
+  .fab-contact{
+    display: none;
+  }
+}
