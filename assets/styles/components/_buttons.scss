@@ -63,7 +63,7 @@
   font: 500 1.4375rem / 120% $font-primary;
 
   &::after {
-    background-image: url("./assets/media/icons/arrow-right.svg");
+    background-image: url("./assets/media/icons/arrow-right-purple.svg");
   }
 
   &::before {
@@ -100,7 +100,6 @@
     }
   }
   .btn-primary {
-    padding: 1.5rem 2rem;
     font-size: 1.25rem;
   }
 }
@@ -117,7 +116,7 @@
   letter-spacing: 0.04em;
 
   &::after {
-    background-image: url("./assets/media/icons/arrow-right.svg");
+    background-image: url("./assets/media/icons/arrow-right-white.svg");
   }
 
   &::before {

@@ -61,6 +61,7 @@
 }
 .cf-popup-person {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.125rem;
   &__img {
     display: block;

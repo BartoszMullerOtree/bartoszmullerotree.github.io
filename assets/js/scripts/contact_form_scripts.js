@@ -268,7 +268,7 @@ export default function contactFormScripts() {
           console.error("There was a problem with the fetch operation:", error);
           showAlertMessage(
             false,
-            "Spróbuj ponownie za chwilę lub <br> skontaktuj się z nami w inny sposób"
+            "Spróbuj ponownie za chwilę lub skontaktuj się z nami w inny sposób"
           );
           stopSending();
         });

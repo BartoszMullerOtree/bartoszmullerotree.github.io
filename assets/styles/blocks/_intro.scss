@@ -13,7 +13,7 @@
     z-index: -1;
     display: block;
     width: 31%;
-    height: auto
+    height: auto;
   }
 
   &__header {
@@ -42,9 +42,12 @@
       width: 250px;
       margin: auto;
     }
-    &__plate{
+    &__plate {
       padding: 1rem;
       margin-top: 2.5rem;
+    }
+    .btn-primary {
+      padding: 1.5rem 2rem;
     }
   }
 }

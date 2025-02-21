@@ -28,7 +28,7 @@
 }
 
 .accordion {
-  max-width: 48rem;
+  
   &__item {
     position: relative;
 
@@ -106,6 +106,8 @@
   $accordion__item-left-padding: 2.5625rem;
 
   .accordion {
+    max-width: 48rem;
+    
     &__item {
       position: relative;
 

@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $approval = isset($_POST['approval']) ? filter_var($_POST['approval'], FILTER_VALIDATE_BOOLEAN) : false;
 
     // Sprawdzenie, czy wymagane pola zostały wypełnione i formularz zaakceptowany
-    if (!empty($fullname) && !empty($email) && $approval) {
+    if (!empty($fullname) && (!empty($email) || !empty($phone)) && $approval) {
 
         $mail = new PHPMailer(true);
 
@@ -77,21 +77,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
             $mail->send();
-            $response['text'] = '<strong>Dziękujemy za wiadomość.</strong> Wkrótce się do Ciebie odezwiemy.';
+            $response['text'] = 'Dziękujemy za przesłanie wiadomości!<br />
+            Odpowiemy najszybciej jak to możliwe :)';
             $response['sended'] = true;
         } catch (Exception $e) {
-            $response['text'] = '<strong>Twoja wiadomość nie została wysłana.</strong> Spróbuj ponownie za chwilę lub skontaktuj się z nami w inny sposób';
+            $response['text'] = 'Spróbuj ponownie za chwilę lub skontaktuj się z nami w inny sposób';
             $response['sended'] = false;
             $response['error'] = "Błąd: {$mail->ErrorInfo}";
         }
     } else {
-        $response['text'] = '<strong>Uzupełnij wszystkie wymagane pola.</strong> Zaakceptuj regulamin i spróbuj ponownie.';
+        $response['text'] = 'Uzupełnij wszystkie wymagane pola. <br /> Zaakceptuj regulamin i spróbuj ponownie.';
         $response['sended'] = false;
         $response['error'] = 'Brak wymaganych pól lub niezaakceptowany formularz.';
     }
 } else if (!empty($_GET['show_error'])) {
     $response = [
-        "text" => '<strong>Nie udało się wysłać wiadomości</strong> spróbuj ponownie za chwilę lub skontaktuj się z nami w inny sposób',
+        "text" => '>Spróbuj ponownie za chwilę lub skontaktuj się z nami w inny sposób',
         "sended" => false,
         "error" => "Post method error",
     ];

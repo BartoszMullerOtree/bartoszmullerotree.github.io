@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
+    <div class="bg-before sticky-bg"></div>
     <div class="page-ctnr">
       <div class="cf-popup">
         <div class="cf-popup__blur close-cf-popup"></div>
-        
+
         <div class="cf-popup__container">
           <button class="cf-popup__btn close-cf-popup icon icon-xmark"></button>
           <p class="cf-popup__title">Formularz został przesłany!</p>
@@ -19,11 +20,21 @@
             Odpowiemy najszybciej jak to możliwe :)
           </p>
           <div class="cf-popup-person">
-            <img src="/assets/media/images/magdalena-team-small.jpg" alt="" class="cf-popup-person__img" />
+            <img
+              src="/assets/media/images/magdalena-team-small.jpg"
+              alt=""
+              class="cf-popup-person__img"
+            />
             <div class="cf-popup-person__content">
               <p class="cf-popup-person__name">Magdalena Baczyńska-Kasprzyk</p>
-              <a href="tel:+48 123 456 789" class="cf-popup-person__link">tel. +48 123 456 789</a>
-              <a href="mailto:adresemail@domena.pl" class="cf-popup-person__link">adresemail@domena.pl</a>
+              <a href="tel:+48 123 456 789" class="cf-popup-person__link"
+                >tel. +48 123 456 789</a
+              >
+              <a
+                href="mailto:adresemail@domena.pl"
+                class="cf-popup-person__link"
+                >adresemail@domena.pl</a
+              >
             </div>
           </div>
         </div>
@@ -86,32 +97,32 @@
               class="header__menuBtn header__menuBtn--close toggle-header"
             ></button>
           </div>
-          <a class="header-nav__btn btn btn-secondary btn-secondary--small"
+          <a class="header-nav__btn btn btn-secondary btn-secondary"
             >Wybierz najlepszą platformę</a
           >
           <ul class="header-nav__list">
             <li class="header-nav__item">
-              <a href="#" class="header-nav__link">Jak działa konfigurator?</a>
+              <a href="#benefity" class="header-nav__link">Jak działa konfigurator?</a>
             </li>
             <li class="header-nav__item">
-              <a href="#" class="header-nav__link"
+              <a href="#dla-kogo" class="header-nav__link"
                 >Czy to rozwiązanie jest dla Ciebie?</a
               >
             </li>
             <li class="header-nav__item">
-              <a href="#" class="header-nav__link">Co zyskujesz?</a>
+              <a href="#proces" class="header-nav__link">Co zyskujesz?</a>
             </li>
             <li class="header-nav__item">
-              <a href="#" class="header-nav__link">Nasi eksperci</a>
+              <a href="#doswiadczony-team" class="header-nav__link">Nasi eksperci</a>
             </li>
             <li class="header-nav__item">
-              <a href="#" class="header-nav__link">FAQ</a>
+              <a href="#faq" class="header-nav__link">FAQ</a>
             </li>
             <li class="header-nav__item">
-              <a href="#" class="header-nav__link">Analizowane technologie</a>
+              <a href="#analizowane-technologie" class="header-nav__link">Analizowane technologie</a>
             </li>
             <li class="header-nav__item">
-              <a href="#" class="header-nav__link">Kontakt</a>
+              <a href="#kontakt" class="header-nav__link">Kontakt</a>
             </li>
           </ul>
         </nav>
@@ -127,14 +138,17 @@
             Szybki wybór technologii - dobierzemy ją za Ciebie!
           </h3>
         </section>
-        <section class="benefits content-ctnr">
-          <div class="benefits__header">
+        <section id="benefity" class="benefits content-ctnr">
+          <div class="benefits__header bg-before">
             <h4 class="benefits__subtitle over-title">Benefity</h4>
             <h2 class="benefits__title">Co zyskujesz?</h2>
-            <img
-              class="benefits__img"
+            <div class="benefits__img bg-before">
+              <img
+              class="img img--fill"
               src="/assets/media/images/benefits-cart.png"
             />
+            </div>
+            
           </div>
           <ul class="benefits__list fadeInElements">
             <li class="benefits-card">
@@ -205,7 +219,7 @@
             </li>
           </ul>
         </section>
-        <section class="questions content-ctnr">
+        <section id="dla-kogo" class="questions content-ctnr bg-before">
           <h4 class="questions__subtitle over-title">Dla kogo</h4>
           <h2 class="questions__title">Czy to rozwiązanie jest dla Ciebie?</h2>
           <ul class="questions__list fadeInElements">
@@ -262,7 +276,7 @@
             </li>
           </ul>
         </section>
-        <section class="process content-ctnr">
+        <section id="proces" class="process content-ctnr bg-before">
           <h4 class="process__subtitle over-title">Poznaj nasz proces</h4>
           <h2 class="process__title">Jak to działa?</h2>
           <ul class="process__list fadeInElements">
@@ -294,7 +308,7 @@
             </li>
           </ul>
         </section>
-        <section class="gradient-box content-ctnr">
+        <section id="nie-trac-czasu" class="gradient-box content-ctnr">
           <div class="gradient-box__textCtnr">
             <h4 class="gradient-box__subtitle over-title">Nie trać czasu</h4>
             <h2 class="gradient-box__title">
@@ -302,12 +316,12 @@
             </h2>
           </div>
           <div class="gradient-box__btnCtnr">
-            <button class="btn btn-primary btn-primary--small">
+            <button class="btn btn-primary btn-primary">
               Rozpocznij analizę
             </button>
           </div>
         </section>
-        <section class="experts content-ctnr">
+        <section id="doswiadczony-team" class="experts content-ctnr bg-before">
           <div class="experts__header">
             <h4 class="experts__subtitle over-title">Doświadczony team</h4>
             <h2 class="experts__title">Nasi eksperci</h2>
@@ -341,14 +355,22 @@
             </li>
           </ul>
         </section>
-        <section class="faq content-ctnr">
+        <section id="faq" class="faq content-ctnr bg-before">
           <div class="faq__content">
             <div class="faq__header">
               <h4 class="faq__subtitle over-title">FAQ</h4>
               <h2 class="faq__title">Najczęściej zadawane pytania</h2>
             </div>
-            <img src="/assets/media/images/faq-img.png" alt="" class="faq__img only-desktop" />
-            <img src="/assets/media/images/faq-img-mobile.png" alt="" class="faq__img only-mobile" />
+            <img
+              src="/assets/media/images/faq-img.png"
+              alt=""
+              class="faq__img only-desktop"
+            />
+            <img
+              src="/assets/media/images/faq-img-mobile.png"
+              alt=""
+              class="faq__img only-mobile"
+            />
             <ul class="accordion fadeInElements">
               <li class="accordion__item">
                 <h4 class="accordion__header">
@@ -389,13 +411,13 @@
             </ul>
           </div>
         </section>
-        <section class="contact content-ctnr">
+        <section id="kontakt" class="contact content-ctnr">
           <div class="contact__header">
             <h4 class="contact__subtitle over-title">Skontaktuj się z nami</h4>
             <h2 class="contact__title">Pomoc w doborze e-commerce</h2>
           </div>
           <div class="contact__content">
-            <div class="contact-person">
+            <div class="contact-person bg-before">
               <img
                 class="contact-person__img"
                 src="/assets/media/images/magdalena-team.png"
@@ -408,7 +430,7 @@
                 >adresemail@domena.pl</a
               >
             </div>
-            <form class="contact-form">
+            <form class="contact-form bg-before">
               <div class="contact-form__row">
                 <div class="contact-form-field">
                   <input
@@ -587,11 +609,11 @@
             </form>
           </div>
         </section>
-        <section class="logos">
+        <footer id="analizowane-technologie" class="section logos bg-before">
           <div class="logos__img"></div>
           <div class="logos__content">
             <h4 class="logos__title over-title">Analizowane technologie:</h4>
-            <ul class="logos-list">
+            <ul class="logos-list fadeInElements">
               <li class="logos-list__item">
                 <img
                   src="/assets/media/logos/shopify-logo.svg"
@@ -636,9 +658,8 @@
               </li>
             </ul>
           </div>
-        </section>
+        </footer>
       </main>
-      <footer class="footer" id="main-footer"></footer>
       <script type="module" src="/assets/js/main.js"></script>
     </div>
   </body>

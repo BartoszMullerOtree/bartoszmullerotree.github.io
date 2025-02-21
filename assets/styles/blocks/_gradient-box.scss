@@ -35,11 +35,7 @@
     border-radius: 3rem;
     border: 0.9375rem solid rgba(255, 255, 255, 0.1);
   }
-  &__textCtnr {
-    max-width: 37.5rem;
-    width: 56%;
-    flex-grow: 1;
-  }
+
   &__subtitle,
   &__title {
     background: unset;
@@ -55,26 +51,56 @@
   &__title {
     color: $Color-Brand-black;
   }
-  &__btnCtnr {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    height: max-content;
-    padding: 1.5rem 2rem;
-
-    border-radius: 3.5rem;
-    border: 1px solid $Color-Brand-Soft_brand;
-    background: linear-gradient(
-      122deg,
-      rgba(255, 255, 255, 0.2) 20.89%,
-      rgba(255, 255, 255, 0.04) 69.36%
-    );
+  .btn {
+    font-size: 1.125rem;
+    font-weight: 600;
   }
 }
+@include desktop {
+  .gradient-box {
+    &__textCtnr {
+      max-width: 37.5rem;
+      width: 56%;
+      flex-grow: 1;
+    }
+    &__btnCtnr {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-@include tablet{
-  .gradient-box{
+      height: max-content;
+      padding: 1.5rem 2rem;
+
+      border-radius: 3.5rem;
+      border: 1px solid $Color-Brand-Soft_brand;
+      background: linear-gradient(
+        122deg,
+        rgba(255, 255, 255, 0.2) 20.89%,
+        rgba(255, 255, 255, 0.04) 69.36%
+      );
+    }
+  }
+}
+@include tablet {
+  .gradient-box {
+    display: block;
+    padding: 1.75rem 1rem 2.75rem;
     margin: 2rem 0;
+
+    &::before {
+      border: 0.375rem solid rgba(255, 255, 255, 0.2);
+    }
+
+    &__textCtnr{
+      padding: 0 1rem;
+    }
+    &__title {
+      margin-bottom: 3rem;
+      color: $Color-Brand-Strong_brand;
+      font: 400 2.4375rem / 115% $font-primary;
+    }
+    .btn{
+      margin: auto;
+    }
   }
 }

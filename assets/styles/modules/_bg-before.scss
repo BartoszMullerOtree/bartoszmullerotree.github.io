@@ -1,0 +1,180 @@
+.bg-before {
+  position: relative;
+
+  &::before {
+    content: "";
+
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+
+    display: block;
+    height: auto;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.sticky-bg {
+  position: static;
+
+  &::before {
+    left: 0;
+    top: 0;
+
+    aspect-ratio: 1700 / 1057;
+    width: 100%;
+
+    // background-image: url("/assets/media/images/ellipse-intro-main.png");
+    background-blend-mode: color;
+  }
+}
+
+.benefits__img {
+  &::before {
+    bottom: -2.5rem;
+    left: 50%;
+    transform: translate(-50%, 0%);
+
+    aspect-ratio: 970 / 110;
+    width: 60.625rem;
+
+    background-image: url("/assets/media/background/ellipse-benefits-img.svg");
+  }
+}
+@include desktop {
+  .questions {
+    &::before {
+      top: 0;
+      right: 0;
+      transform: translate(12%, 22%);
+
+      aspect-ratio: 1700 / 681;
+      width: 106.25rem;
+
+      background-image: url("/assets/media/background/questions.svg");
+    }
+  }
+  .process {
+    &::before {
+      top: 0;
+      left: 0;
+      transform: translate(-12%, -22%);
+
+      aspect-ratio: 1700 / 937;
+      width: 100vw;
+
+      background-image: url("/assets/media/background/process.svg");
+    }
+  }
+}
+.experts {
+  &::before {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    aspect-ratio: 1700 / 450;
+    width: 100vw;
+
+    background-image: url("/assets/media/background/horizon.svg");
+  }
+}
+
+.faq {
+  &::before {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -40%);
+
+    aspect-ratio: 1700 / 1244;
+    width: 100vw;
+
+    background-image: url("/assets/media/background/faq.svg");
+  }
+}
+.contact-person {
+  &::before {
+    left: 0;
+    top: 0;
+    transform: translate(-25%, -13%);
+
+    aspect-ratio: 506 / 325;
+    width: 31.625rem;
+
+    background-image: url("/assets/media/background/ellipse-contact-img.svg");
+  }
+}
+
+.contact-form {
+  &::before {
+    bottom: 0;
+    right: 0;
+    transform: translate(30%, 38.5%);
+
+    aspect-ratio: 807 / 325;
+    width: 50.4375rem;
+    background-image: url("/assets/media/background/ellipse-contact-btn.svg");
+  }
+}
+
+.logos {
+  &::before {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    aspect-ratio: 1700 / 915;
+    width: 100vw;
+
+    background-image: url("/assets/media/background/footer.svg");
+  }
+}
+
+@include tablet {
+  .experts {
+    &::before {
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0%);
+
+      aspect-ratio: 1700 / 1244;
+      width: 100vw;
+
+      background-image: url("/assets/media/background/faq.svg");
+    }
+  }
+
+  .faq {
+    &::before {
+      top: unset;
+      bottom: 0;
+      transform: translate(-75%, -50%);
+      aspect-ratio: 807 / 325;
+      width: 50.4375rem;
+
+      background-image: url("/assets/media/background/ellipse-contact-btn.svg");
+    }
+  }
+  .contact-person {
+    &::before {
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, 75%);
+  
+      aspect-ratio: 807 / 325;
+    width: 50.4375rem;
+  
+      background-image: url("/assets/media/background/ellipse-contact-btn.svg");
+    }
+  }
+  .contact-form {
+    &::before {
+      bottom: 0;
+      right: unset;
+      left: 0;
+      transform: translate(-35%, 0rem);
+    }
+  }
+}

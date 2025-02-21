@@ -3,6 +3,7 @@ import fadeInAnimation from "./scripts/fade_in_animation.js";
 import accordion from "./scripts/accordion.js";
 import contactFormScripts from "./scripts/contact_form_scripts.js";
 import fab from "./scripts/fab.js";
+import stickyHeader from "./scripts/sticky_header.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("load", () => {
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
+    stickyHeader();
     scrollAnimate();
     fadeInAnimation();
     accordion();

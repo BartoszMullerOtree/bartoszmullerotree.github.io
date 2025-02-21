@@ -1,8 +1,13 @@
 html {
   scroll-behavior: smooth;
 
+  // overflow-x: hidden;
+  // max-width: 100%;
   @media (max-width: $desktop-scale-bp) and (min-width: #{$tablet-bp + 0.5px}) {
     font-size: calc(0.3rem + 0.75vw);
+  }
+  @media (max-width: $phone-scale-bp) {
+    font-size: calc(0.7rem + 1.1vw);
   }
   // @media (max-width: $tablet-bp) and (min-width: #{$tablet-scale-bp}) {
   //   font-size: calc(0.3rem + 1vw);
@@ -10,23 +15,25 @@ html {
 }
 
 body {
+  position: relative;
+
   background-color: $Color-Brand-black;
-  
+
   font: 300 1.3125rem $font-primary;
   color: $Color-Brand-white;
-  overflow-y: scroll;
+  overflow-x: hidden;
+  max-width: 100vw;
   font-family: $font-primary;
-  
 }
 
 @media (min-width: 1440px) {
   body {
-    margin-inline: 7.6%;
+    padding-inline: 7.6%;
   }
 }
 @media (max-width: 1439.5px) and (min-width: #{$tablet-bp + 0.5px}) {
   body {
-    margin-inline: 3.8%;
+    padding-inline: 3.8%;
   }
 }
 /* -------------------- */
@@ -112,16 +119,18 @@ h4,
 /* CONTAINERS */
 
 .page-ctnr {
+  position: relative;
+
   display: block;
   width: 100%;
   margin: auto;
   max-width: 1440px;
   margin: auto;
+  padding-top: 4.5rem;
 
   background: url("/assets/media/images/lines_bg.svg");
   background-size: 100%;
-
-  padding-bottom: 20vh;
+  background-repeat: repeat-y;
 }
 .page-content {
   display: block;
@@ -134,11 +143,19 @@ section,
 .content-ctnr {
   padding-left: 8.3%;
 }
+
 @include tablet {
+  .body{
+  }
+  .page-ctnr{
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+
   .page-ctnr {
     background-image: url("/assets/media/images/lines_bg_mobile.svg");
     background-size: calc(100% - 2rem);
-    background-repeat: no-repeat;
     background-position: center;
   }
   .page-content {
@@ -153,10 +170,6 @@ section,
   }
 }
 
-@include tablet {
-  .page-ctnr {
-  }
-}
 
 /* -------------------- */
 

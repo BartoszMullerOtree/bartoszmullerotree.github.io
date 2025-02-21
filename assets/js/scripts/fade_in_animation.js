@@ -10,7 +10,7 @@ export default function fadeInAnimation () {
       const viewPoint = window.innerHeight / 1.3;
 
       if (
-        elementOffset.top <= viewPoint &&
+        (elementOffset.top <= viewPoint || window.scrollY + window.innerHeight >= document.body.scrollHeight - 200) &&
         elementOffset.bottom >= window.innerHeight - viewPoint
       ) {
         if (currentHeight !== elementOffset.top) {
