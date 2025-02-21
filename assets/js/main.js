@@ -4,19 +4,12 @@ import accordion from "./scripts/accordion.js";
 import contactFormScripts from "./scripts/contact_form_scripts.js";
 import fab from "./scripts/fab.js";
 import stickyHeader from "./scripts/sticky_header.js";
+import pageMainEvents from "./scripts/page_main_events.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("load", () => {
-    const menuButtons = document.querySelectorAll(".toggle-header");
-    const headerMenu = document.getElementById("main-header");
-
-    menuButtons?.forEach((button) => {
-      button.addEventListener("click", () => {
-        headerMenu.classList.toggle("header--active");
-        document.body.classList.toggle("scroll-lock");
-      });
-    });
-
+    
+    pageMainEvents();
     stickyHeader();
     scrollAnimate();
     fadeInAnimation();
