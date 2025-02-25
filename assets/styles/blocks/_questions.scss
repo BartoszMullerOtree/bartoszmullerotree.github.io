@@ -4,12 +4,12 @@
   }
   &__list {
     display: flex;
-    gap: 3.3%;
+    gap: 3%;
   }
 }
 .questions-card {
   padding: 3.3% 1.5rem 4.4% 3.3%;
-
+  flex: 1;
   border-radius: 1rem;
   border: 0.25rem solid $Color-Brand-Strong_brand;
   background: linear-gradient(
@@ -31,6 +31,7 @@
 
     background-color: $Color-Brand-Strong_brand;
     border-radius: 50%;
+    @include shadow-boxes(0px 0px 28px 0px #ac9ade);
   }
   &__img {
     display: block;
@@ -42,6 +43,8 @@
     margin-bottom: 2rem;
 
     color: $Color-Brand-Strong_brand;
+    font: 500 2.25rem / 120% $font-primary;
+    letter-spacing: 0.04em;
   }
   &__desc {
     margin-top: auto;
@@ -52,10 +55,16 @@
     letter-spacing: 0.02em;
   }
 }
+@media (max-width: 90rem) {
+  .questions__list {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
 
 @include tablet {
   .questions {
-    &__title{
+    &__title {
       margin-bottom: 2rem;
     }
     &__list {

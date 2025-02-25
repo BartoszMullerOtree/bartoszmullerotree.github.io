@@ -71,14 +71,16 @@
   .benefits-card {
     &:nth-child(2) {
       width: 84%;
+      max-width: 39.5625rem;
       margin-left: 2.5rem;
     }
     &:nth-child(3) {
       width: 83%;
+      max-width: 39rem;
     }
     &:nth-child(4) {
-      width: 89%;
-      margin-left: auto;
+      width: auto;
+      margin-left: 5rem;
     }
   }
 }

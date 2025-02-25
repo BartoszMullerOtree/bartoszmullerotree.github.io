@@ -8,9 +8,6 @@
   &__header {
     margin-bottom: 4rem;
   }
-
-
- 
 }
 
 .contact-person {
@@ -38,8 +35,6 @@
 }
 .contact-form {
   flex: 1;
-
-
 
   > * {
     margin-bottom: 1.5rem;
@@ -105,10 +100,7 @@
     &:not(:focus) {
       opacity: 0.7;
     }
-    textarea {
-      height: 42.9375rem;
-      padding: 0.75rem 0.875rem;
-    }
+
     &[type="checkbox"] {
       display: block;
       width: 1.25rem;
@@ -131,6 +123,10 @@
         }
       }
     }
+  }
+  textarea {
+    padding: 0.75rem 0.875rem;
+    min-height: 6.875rem;
   }
   &__msg {
     display: none;

@@ -23,8 +23,10 @@
   .btn-primary {
   }
   &__plate {
-    max-width: 56.25rem;
+    max-width: 56.125rem;
     padding: 2rem 3rem;
+    width: 100%;
+    text-align: center;
     margin-top: 7.25rem;
 
     border-radius: 1rem;

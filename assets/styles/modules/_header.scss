@@ -122,7 +122,11 @@
     }
   }
 }
-
+@include desktop{
+  .header{
+    width: calc(#{100% - $desktop-right-margin}) ;
+  }
+}
 @include tablet {
   .header {
     position: fixed;

@@ -3,7 +3,7 @@ html {
 
   // overflow-x: hidden;
   // max-width: 100%;
-  @media (max-width: $desktop-scale-bp) and (min-width: #{$tablet-bp + 0.5px}) {
+  @media (max-width: $desktop-scale-bp) and (min-width: #{$tablet-bp + 0.0313rem}) {
     font-size: calc(0.3rem + 0.75vw);
   }
   @media (max-width: $phone-scale-bp) {
@@ -26,14 +26,19 @@ body {
   font-family: $font-primary;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 100rem) { // 1600px
   body {
-    padding-inline: 7.6%;
+    padding-left: 7.64%;
   }
 }
-@media (max-width: 1439.5px) and (min-width: #{$tablet-bp + 0.5px}) {
+@media (max-width: 100rem) and (min-width: $page-width) {
   body {
-    padding-inline: 3.8%;
+    padding-left: 5%;
+  }
+}
+@media (max-width: #{$page-width - 0.0313rem}) and (min-width: #{$tablet-bp + 0.0313rem}) {
+  body {
+    padding-left: 3.8%;
   }
 }
 /* -------------------- */
@@ -124,24 +129,31 @@ h4,
   display: block;
   width: 100%;
   margin: auto;
-  max-width: 1440px;
+  max-width: $page-width;
   margin: auto;
   padding-top: 4.5rem;
 
   background: url("/assets/media/images/lines_bg.svg");
-  background-size: 100%;
+  background-size: calc(#{100% - $desktop-right-margin});
   background-repeat: repeat-y;
 }
 .page-content {
   display: block;
+  padding-right: 0.25rem;
 }
 section,
 .section {
   padding: 4rem 0;
+
+  border-bottom: 1px solid rgba(209, 209, 209, 0.15);
+
+  &:last-child{
+    border-bottom: 0;
+  }
 }
 
 .content-ctnr {
-  padding-left: 8.3%;
+  padding-left: 7.66%;
 }
 
 @include tablet {

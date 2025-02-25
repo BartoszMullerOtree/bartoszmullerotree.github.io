@@ -1,9 +1,11 @@
 .process {
+  padding-right: $desktop-left-content-padding;
   &__title {
   }
   &__list {
     display: flex;
     gap: 5.7%;
+    
   }
 }
 .process-step {
