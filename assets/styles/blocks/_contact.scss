@@ -284,6 +284,9 @@
       letter-spacing: 0.02em;
       font: 300 1.3125rem / 143% $font-primary;
     }
+    &__link{
+      font-weight: 400;
+    }
   }
   .contact-form {
     > * {
