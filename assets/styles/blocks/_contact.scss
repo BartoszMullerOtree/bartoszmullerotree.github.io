@@ -259,7 +259,7 @@
 @include desktop {
   .contact-form {
     max-width: 44.6875rem;
-    margin: auto;
+    margin-right: auto;
     &__row {
       .contact-form-field {
         + .contact-form-field {
