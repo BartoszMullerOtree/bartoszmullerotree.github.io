@@ -5,7 +5,6 @@
   &__title {
     margin-bottom: 4.25rem;
     white-space: nowrap;
-
   }
   &__subtitle {
   }
@@ -56,13 +55,13 @@
 @include desktop {
   .benefits {
     flex-wrap: wrap;
+    gap: 6.5%;
     row-gap: 3rem;
     &__header {
-      padding-right: 6%;
-      flex: 0 2 0;
-      max-width: 546px;
+      flex: 0 0 auto;
+      max-width: 29rem;
     }
-    &__list{
+    &__list {
       flex: 1 1 0;
       min-width: 550px;
     }
@@ -70,15 +69,13 @@
   .benefits-card {
     &:nth-child(2) {
       width: 84%;
-      max-width: 39.5625rem;
       margin-left: 2.5rem;
     }
     &:nth-child(3) {
       width: 83%;
-      max-width: 39rem;
     }
     &:nth-child(4) {
-      width: auto;
+      width: calc(100% - 5rem);
       margin-left: 5rem;
     }
   }
@@ -110,10 +107,17 @@
   }
 }
 
-@media (max-width: 75rem){
+@media (max-width: 75rem) {
+  // 1200px
   .benefits {
+    gap: 1%;
+
     &__header {
-      padding-right: 0%
+      max-width: unset;
+      flex-grow: 1;;
+    }
+    &__img{
+      max-width: 22.75rem;
     }
   }
 }
